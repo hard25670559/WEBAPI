@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>aaaa</title>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script>
+            function get() {
+                var account = $('#account').val();
+                var password = $('#password').val();
+
+                $.ajax({
+                    url:'http://localhost:8080/test.php',
+                    method: 'post',
+                    data: {account: account, password: password},
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function () {
+                        console.log('Error');
+                    }
+                });
+
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            密碼<input type="text" id="account">
+            帳號<input type="text" id="password">
+            <input type="button" value="get" onclick="get()">
+        </div>
+    </body>
+</html>
