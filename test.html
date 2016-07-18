@@ -8,11 +8,14 @@
             function get() {
                 var account = $('#account').val();
                 var password = $('#password').val();
+                var name = $('#name').val();
+//                var password1 = $('#password1').val();
+
 
                 $.ajax({
                     url:'http://localhost:8080/test.php',
                     method: 'post',
-                    data: {account: account, password: password},
+                    data: {controller:'update', account: account, password: password,name:name},
                     success: function (data) {
                         console.log(data);
                     },
@@ -26,9 +29,12 @@
     </head>
     <body>
         <div>
-            密碼<input type="text" id="account">
-            帳號<input type="text" id="password">
-            <input type="button" value="get" onclick="get()">
+            登入<br>
+            帳號<input type="text" id="account"><br>
+            密碼<input type="text" id="password"><br>
+            姓名<input type="text" id="name">
+            <input type="button" value="get" onclick="get()"><br>
         </div>
+
     </body>
 </html>
