@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>aaaa</title>
+        <title>login</title>
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script>
             function get() {
@@ -13,9 +13,9 @@
 
 
                 $.ajax({
-                    url:'http://localhost:8080/delete.php',
+                    url:'http://localhost:8080/deleteIP.php',
                     method: 'post',
-                    data: {controller:'update', account: account, password: password,name:name},
+                    data: {controller:'login', account: account, password: password,name:name},
                     success: function (data) {
                         console.log(data);
                     },
