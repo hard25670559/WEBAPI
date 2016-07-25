@@ -7,6 +7,8 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 
 $dsn = "mysql:host=localhost;dbname=test";
 $pdo = new PDO($dsn, 'userdb', '123456');
+//$dsn = "mysql:host=localhost;dbname=damin";
+//$pdo = new PDO($dsn, 'root', 'Ms25680117');
 
 $ip = $_SERVER['REMOTE_ADDR'];
 $time = date('Y-m-d  H:i:s') ;
