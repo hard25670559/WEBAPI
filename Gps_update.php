@@ -8,7 +8,7 @@ $dsn = "mysql:host=localhost;dbname=test";
 $pdo = new PDO($dsn, 'userdb', '123456');
 //$dsn = "mysql:host=localhost;dbname=damin";
 //$pdo = new PDO($dsn, 'root', 'Ms25680117');
-$sluice = $_POST['account'];   //抓取前端相對應變數值
+$sluice = $_POST['sluice'];   //抓取前端相對應變數值
 
 $take = "select sluice from GPS_Point where GPS_Id = 0";
 $result = $pdo->query($take);
