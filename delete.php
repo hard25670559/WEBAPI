@@ -13,14 +13,13 @@ $function =$_POST['controller'];
 $account = $_POST['account'];   //抓取前端相對應變數值
 $password = $_POST['password'];
 $sql = "select * from Account_Data where Account_Number = '$account' and Account_Password = '$password'and Account_Status= '0'";
-//echo $sql;
 $result = $pdo->query($sql); //若查詢結果筆數大於零，表示有此帳號以及認證成功，繼續修改資料的步驟
 if ($cat=$result->rowCount() > 0)
 {   $time = date('Y-m-d  H:i:s') ;
-    //將要修改的欄位值帶入
+    //將要刪除的紀錄狀態的欄位值改變
 
     $count = $pdo->exec("UPDATE Account_Data SET Account_Update ='$time',Account_Status= '1' WHERE Account_Number = '$account'");
-//    $count = $pdo->exec("DELETE FROM Account_Data WHERE Account_Number ='$account'");
+    //$count = $pdo->exec("DELETE FROM Account_Data WHERE Account_Number ='$account'");
     $take = "select * from Account_Data where Account_Number = '$account' and Account_Status= '1'";
     $result2 = $pdo->query($take);
     if ($result2->rowCount() ==  1){

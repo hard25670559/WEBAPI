@@ -6,16 +6,16 @@
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script>
             function get() {
-                var account = $('#account').val();
-                var password = $('#password').val();
-                var name = $('#name').val();
+                var Driver_Id = $('#Driver_Id').val();
+                var x = $('#x').val();
+                var y = $('#y').val();
 //                var password1 = $('#password1').val();
 
 
                 $.ajax({
                     url:'http://192.168.11.174/Gps_deleteDriver.php',
                     method: 'post',
-                    data: {controller:'login', account: account, password: password,name:name},
+                    data: {controller:'login', Driver_Id: Driver_Id, x: x,y:y},
                     success: function (data) {
                         console.log(data);
                     },
@@ -29,10 +29,10 @@
     </head>
     <body>
         <div>
-            登入<br>
-            帳號<input type="text" id="account"><br>
-            密碼<input type="text" id="password"><br>
-            姓名<input type="text" id="name">
+            閘門<br>
+            司機<input type="text" id="Driver_Id"><br>
+            Ｘ座標<input type="text" id="x"><br>
+            Ｙ座標<input type="text" id="y">
             <input type="button" value="get" onclick="get()"><br>
         </div>
 

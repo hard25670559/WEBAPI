@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("Asia/Taipei"); //將時間寫入變數
+date_default_timezone_set("Asia/Taipei"); //將時間寫入
 
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -23,6 +23,7 @@ if ($result->rowCount() ==  1){
         while ($row = $result2->fetch())
         {
             echo json_encode($row)."\n"; //將資料打包成.js格是傳出
+            echo 'GPS功能開啟';
         }
     }
 }

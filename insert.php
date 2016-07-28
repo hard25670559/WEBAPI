@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("Asia/Taipei"); //將時間寫入變數
+date_default_timezone_set("Asia/Taipei"); //將時間寫入
 
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -14,7 +14,6 @@ $account = $_POST['account'];   //抓取前端相對應變數值
 $password = $_POST['password'];
 //查詢是否有相同的資料名稱
 $sql = "select * from Account_Data where Account_Number = '$account'";
-//        echo $sql;
 $result = $pdo->query($sql);
 if ($isCus = $result->rowCount() > 0)
 {
@@ -25,7 +24,6 @@ if ($isCus = $result->rowCount() > 0)
     $time = date('Y-m-d  H:i:s') ;
     $count1  = $pdo->exec("insert into Account_Data(Account_Number,Account_Password,Account_Create,Account_Status) values('$account', '$password','$time','0')");
     $take = "select * from Account_Data where Account_Number = '$account'";//確認資料是否新增成功
-//            echo $take;
     $result = $pdo->query($take);//若成功查詢資料筆數會會大於零
     if ($take = $result->rowCount() > 0){
         while ($row = $result->fetch()) {

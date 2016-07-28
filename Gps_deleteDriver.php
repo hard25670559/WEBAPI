@@ -1,6 +1,6 @@
 <?php
 
-date_default_timezone_set("Asia/Taipei"); //將時間寫入>變數
+date_default_timezone_set("Asia/Taipei"); //將時間寫入
 
 header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -15,8 +15,6 @@ $take = "select sluice from GPS_Point where GPS_Id = 0 and sluice = 0";
 $result = $pdo->query($take);
 if ($result->rowCount() ==  1){
     $count = $pdo->exec("DELETE FROM GPS_Point WHERE GPS_Id <> 0");
-
-
 }
 
 
